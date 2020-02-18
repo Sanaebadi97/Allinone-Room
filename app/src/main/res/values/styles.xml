@@ -8,4 +8,7 @@
         <item name="android:statusBarColor">@color/darkGrey</item> <!-- Requires api 21 -->
     </style>
 
+
+
+
 </resources>
