@@ -16,7 +16,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.appcompat.widget.AppCompatEditText
+        <com.pixelnx.sam.allinone_room.util.LineEditText
         android:id="@+id/note_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
