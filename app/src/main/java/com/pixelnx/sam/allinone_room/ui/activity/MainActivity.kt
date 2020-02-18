@@ -1,5 +1,6 @@
 package com.pixelnx.sam.allinone_room.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -53,6 +54,6 @@ class MainActivity : AppCompatActivity(), NoteAdapter.OnNoteListener {
     }
 
     override fun onNoteClick(position: Int) {
-        Toast.makeText(this, "jhbuh", Toast.LENGTH_SHORT).show()
+        startActivity(Intent(this@MainActivity, DetailsActivity::class.java))
     }
 }
