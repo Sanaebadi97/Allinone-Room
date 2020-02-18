@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pixelnx.sam.allinone_room.adapter.NoteAdapter
 import com.pixelnx.sam.allinone_room.model.Note
+import com.pixelnx.sam.allinone_room.util.VerticalSpacingItemDecorator
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     // lateinit var recyclerView: RecyclerView
     private val noteList: MutableList<Note> = ArrayList<Note>()
     lateinit var noteAdapter: NoteAdapter
-
+    lateinit var itemDecorator: VerticalSpacingItemDecorator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,13 +35,15 @@ class MainActivity : AppCompatActivity() {
     private fun rvConfig() {
         rv_note.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         rv_note.setHasFixedSize(true)
+        itemDecorator= VerticalSpacingItemDecorator(10)
+        rv_note.addItemDecoration(itemDecorator)
         noteAdapter = NoteAdapter(noteList)
         rv_note.adapter = noteAdapter
     }
 
     private fun insertFakeData() {
         for (i in 0..100) {
-            val note = Note("Title $i", "Content $i", "Date $i")
+            val note = Note("Title $i", "Content $i", "Dec 2018-02-09")
             noteList.add(note)
         }
         noteAdapter.notifyDataSetChanged()
