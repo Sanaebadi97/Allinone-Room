@@ -1,6 +1,7 @@
 package com.pixelnx.sam.allinone_room.ui.activity
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,7 @@ import com.pixelnx.sam.allinone_room.ui.adapter.NoteAdapter
 import com.pixelnx.sam.allinone_room.util.VerticalSpacingItemDecorator
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() ,NoteAdapter.OnNoteListener{
+class MainActivity : AppCompatActivity(), NoteAdapter.OnNoteListener {
 
     companion object {
         const val TAG: String = "MainActivity"
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() ,NoteAdapter.OnNoteListener{
         rv_note.setHasFixedSize(true)
         itemDecorator = VerticalSpacingItemDecorator(10)
         rv_note.addItemDecoration(itemDecorator)
-        noteAdapter = NoteAdapter(noteList)
+        noteAdapter = NoteAdapter(noteList, this)
         rv_note.adapter = noteAdapter
     }
 
@@ -52,5 +53,6 @@ class MainActivity : AppCompatActivity() ,NoteAdapter.OnNoteListener{
     }
 
     override fun onNoteClick(position: Int) {
+        Toast.makeText(this, "jhbuh", Toast.LENGTH_SHORT).show()
     }
 }
