@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.pixelnx.sam.allinone_room.R
 import com.pixelnx.sam.allinone_room.model.Note
 import com.pixelnx.sam.allinone_room.ui.adapter.NoteAdapter
+import com.pixelnx.sam.allinone_room.util.Const
 import com.pixelnx.sam.allinone_room.util.VerticalSpacingItemDecorator
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -54,6 +55,8 @@ class MainActivity : AppCompatActivity(), NoteAdapter.OnNoteListener {
     }
 
     override fun onNoteClick(position: Int) {
-        startActivity(Intent(this@MainActivity, DetailsActivity::class.java))
+        val intent = Intent(this@MainActivity, DetailsActivity::class.java)
+        intent.putExtra(Const.SELECTED_NOTE, noteList[position])
+        startActivity(intent)
     }
 }
