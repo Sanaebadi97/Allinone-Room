@@ -1,11 +1,12 @@
-package com.pixelnx.sam.allinone_room
+package com.pixelnx.sam.allinone_room.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.pixelnx.sam.allinone_room.adapter.NoteAdapter
+import com.pixelnx.sam.allinone_room.R
 import com.pixelnx.sam.allinone_room.model.Note
+import com.pixelnx.sam.allinone_room.ui.adapter.NoteAdapter
 import com.pixelnx.sam.allinone_room.util.VerticalSpacingItemDecorator
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,8 +16,7 @@ class MainActivity : AppCompatActivity() {
         const val TAG: String = "MainActivity"
     }
 
-    // lateinit var recyclerView: RecyclerView
-    private val noteList: MutableList<Note> = ArrayList<Note>()
+    private val noteList: MutableList<Note> = ArrayList()
     lateinit var noteAdapter: NoteAdapter
     lateinit var itemDecorator: VerticalSpacingItemDecorator
 
@@ -24,10 +24,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // recyclerView = findViewById(R.id.rv_note)
 
         rvConfig()
         insertFakeData()
+
+        setSupportActionBar(toolbar)
+        title = getString(R.string.toobar_title)
 
 
     }
@@ -35,7 +37,7 @@ class MainActivity : AppCompatActivity() {
     private fun rvConfig() {
         rv_note.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         rv_note.setHasFixedSize(true)
-        itemDecorator= VerticalSpacingItemDecorator(10)
+        itemDecorator = VerticalSpacingItemDecorator(10)
         rv_note.addItemDecoration(itemDecorator)
         noteAdapter = NoteAdapter(noteList)
         rv_note.adapter = noteAdapter

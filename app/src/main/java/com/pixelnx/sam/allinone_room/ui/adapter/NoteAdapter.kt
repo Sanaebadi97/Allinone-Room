@@ -1,4 +1,4 @@
-package com.pixelnx.sam.allinone_room.adapter
+package com.pixelnx.sam.allinone_room.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
