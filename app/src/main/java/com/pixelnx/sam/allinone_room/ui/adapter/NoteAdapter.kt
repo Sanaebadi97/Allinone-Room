@@ -31,4 +31,8 @@ class NoteAdapter(var notList: List<Note>) : RecyclerView.Adapter<NoteAdapter.No
         holder.title.text = notList[position].title
 
     }
+
+    public interface OnNoteListener {
+        fun onNoteClick(position: Int)
+    }
 }
