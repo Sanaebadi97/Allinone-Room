@@ -1,7 +1,7 @@
 package com.pixelnx.sam.allinone_room.model
 
 data class Note(
-    val title: String,
+    var title: String,
     val content: String,
     val timeStamp: String
 ) {

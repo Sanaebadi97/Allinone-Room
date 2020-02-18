@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val note = Note("jhujdv", "bvghd", "kjhujd")
+        note.title=""
 
     }
 }
