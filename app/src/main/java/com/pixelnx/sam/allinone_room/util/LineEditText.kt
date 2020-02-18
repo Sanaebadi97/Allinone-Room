@@ -2,6 +2,7 @@ package com.pixelnx.sam.allinone_room.util
 
 import android.content.Context
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.view.View
@@ -23,6 +24,8 @@ class LineEditText(context: Context?) : AppCompatEditText(context) {
         val paint: Paint = mPaint
 
         mPaint.style = Paint.Style.STROKE
+        mPaint.strokeWidth = 2.0f
+        mPaint.color = Color.YELLOW
 
         var baseLine = getLineBounds(0, rect)
         for (i in 0..numberOfLines) {
