@@ -10,7 +10,7 @@ import com.pixelnx.sam.allinone_room.ui.adapter.NoteAdapter
 import com.pixelnx.sam.allinone_room.util.VerticalSpacingItemDecorator
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() ,NoteAdapter.OnNoteListener{
 
     companion object {
         const val TAG: String = "MainActivity"
@@ -49,5 +49,8 @@ class MainActivity : AppCompatActivity() {
             noteList.add(note)
         }
         noteAdapter.notifyDataSetChanged()
+    }
+
+    override fun onNoteClick(position: Int) {
     }
 }
