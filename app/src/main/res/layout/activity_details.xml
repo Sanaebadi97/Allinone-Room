@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/lightYellow"
+    android:orientation="vertical"
     tools:context=".ui.activity.DetailsActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -12,14 +12,16 @@
         android:layout_height="wrap_content">
 
 
-        <include layout="@layout/layout_note_toolbar"/>
+        <include layout="@layout/layout_note_toolbar" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-        <com.pixelnx.sam.allinone_room.util.LineEditText
+    <com.pixelnx.sam.allinone_room.util.LineEditText
         android:id="@+id/note_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:gravity="top"
         android:padding="5dp"
         android:textColor="@color/black"
         android:textSize="23sp" />

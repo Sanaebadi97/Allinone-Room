@@ -5,11 +5,12 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
+import android.util.AttributeSet
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 
 
-class LineEditText(context: Context?) : AppCompatEditText(context) {
+class LineEditText(context: Context?, attrs: AttributeSet?) : AppCompatEditText(context,attrs) {
 
     private var mRect: Rect = Rect()
     private var mPaint: Paint = Paint()
@@ -25,7 +26,7 @@ class LineEditText(context: Context?) : AppCompatEditText(context) {
 
         mPaint.style = Paint.Style.STROKE
         mPaint.strokeWidth = 2.0f
-        mPaint.color = Color.YELLOW
+        mPaint.color = Color.BLACK
 
         var baseLine = getLineBounds(0, rect)
         for (i in 0..numberOfLines) {
