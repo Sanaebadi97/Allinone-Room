@@ -35,6 +35,7 @@ class DetailsActivity : AppCompatActivity(), View.OnTouchListener ,GestureDetect
             setNoteProperties()
         }
 
+        setListener()
     }
 
     private fun setListener() {
@@ -72,7 +73,8 @@ class DetailsActivity : AppCompatActivity(), View.OnTouchListener ,GestureDetect
     }
 
     override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
+        return mGestureDetector!!.onTouchEvent(event)
     }
 
     override fun onShowPress(e: MotionEvent?) {
