@@ -13,14 +13,35 @@ class DetailsActivity : AppCompatActivity() {
         const val TAG: String = "DetailsActivity"
     }
 
+    private var isNewNotes: Boolean? = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-        if (intent.hasExtra(Const.SELECTED_NOTE)) {
-            val note = intent.getParcelableExtra<Note>(Const.SELECTED_NOTE)
-            Log.i(TAG, "TITLE IS ${note.title} Date IS ${note.timeStamp}")
+        if (getIncomingIntent()) {
+
+            //this is a new note (EDIT MODE)
+        } else {
+            //this is NOT a new note (View MODE)
         }
+
+    }
+
+    fun getIncomingIntent(): Boolean {
+        if (intent.hasExtra(Const.SELECTED_NOTE)) {
+
+            val incomingNote = intent.getParcelableExtra<Note>(Const.SELECTED_NOTE)
+            Log.i(
+                TAG,
+                "INCOMING NOTE $incomingNote , ${incomingNote.timeStamp} , ${incomingNote.title}"
+            )
+
+            isNewNotes = false
+            return false
+        }
+
+        isNewNotes = true
+        return false
     }
 }

@@ -24,7 +24,7 @@ class LineEditText(context: Context?, attrs: AttributeSet?) : AppCompatEditText(
         val rect: Rect = mRect
         val paint: Paint = mPaint
 
-        mPaint.style = Paint.Style.STROKE
+        mPaint.style = Paint.Style.FILL
         mPaint.strokeWidth = 2.0f
         mPaint.color = Color.BLACK
 
