@@ -13,7 +13,7 @@ import com.pixelnx.sam.allinone_room.util.Const
 import kotlinx.android.synthetic.main.activity_details.*
 import kotlinx.android.synthetic.main.layout_note_toolbar.*
 
-class DetailsActivity : AppCompatActivity(), View.OnTouchListener ,GestureDetector.OnGestureListener{
+class DetailsActivity : AppCompatActivity(), View.OnTouchListener ,GestureDetector.OnGestureListener , GestureDetector.OnDoubleTapListener{
 
     companion object {
         const val TAG: String = "DetailsActivity"
@@ -106,6 +106,18 @@ class DetailsActivity : AppCompatActivity(), View.OnTouchListener ,GestureDetect
     }
 
     override fun onLongPress(e: MotionEvent?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onDoubleTap(e: MotionEvent?): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onDoubleTapEvent(e: MotionEvent?): Boolean {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
+    override fun onSingleTapConfirmed(e: MotionEvent?): Boolean {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }
