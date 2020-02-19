@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Allinone-Room</string>
     <string name="toobar_title">Note</string>
+    <string name="note_title">Note Title</string>
 </resources>
